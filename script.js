@@ -146,6 +146,37 @@ function createGlobalFloatingShapes() {
     }
 }
 
+// Función para manejar las imágenes de proyectos
+function setupProjectImages() {
+    // Agregar clase para contenido con imagen
+    const browserContent = document.querySelector('.project-card[data-project="perroteygatote"] .browser-content')
+    if (browserContent) {
+        browserContent.classList.add("has-image")
+    }
+
+    // Agregar overlay de información
+    const perroteygatoteCard = document.querySelector('.project-card[data-project="perroteygatote"] .browser-content')
+    if (perroteygatoteCard) {
+        const overlay = document.createElement("div")
+        overlay.className = "project-overlay"
+        overlay.innerHTML = `
+            <h4>Perroteygatote.com</h4>
+            <div class="tech-tags">
+                <span class="tech-tag-small">HTML5</span>
+                <span class="tech-tag-small">CSS3</span>
+                <span class="tech-tag-small">JavaScript</span>
+                <span class="tech-tag-small">Responsive</span>
+            </div>
+        `
+        perroteygatoteCard.appendChild(overlay)
+    }
+}
+
+// Llamar la función después de que se cargue la página
+window.addEventListener("load", () => {
+    setupProjectImages()
+})
+
 // Actualizar el CSS para las partículas globales
 const globalParticleStyle = document.createElement("style")
 globalParticleStyle.textContent = `
