@@ -265,17 +265,35 @@ window.addEventListener("scroll", () => {
 // Project card click handlers
 document.querySelectorAll(".project-card").forEach((card) => {
     card.addEventListener("click", () => {
-        const projectType = card.dataset.project
-
-        if (projectType === "perroteygatote") {
-            // Open the actual website
-            window.open("https://www.perroteygatote.com/", "_blank")
-        } else if (projectType.includes("placeholder")) {
-            // Show a message for placeholder projects
-            alert("Este espacio está reservado para tu próximo proyecto. ¡Pronto estará disponible!")
+        let title = "";
+        const h3 = card.querySelector("h3");
+        if (h3 && h3.textContent) {
+            title = h3.textContent.trim();
         }
-    })
-})
+
+        switch (title) {
+            case "Perroteygatote.com":
+                window.open("https://www.perroteygatote.com/", "_blank");
+                break;
+            case "buff-headCOL.com":
+                window.open("https://gorras-sigma.vercel.app/", "_blank");
+                break;
+            case "CelularTechi-col":
+                window.open("https://celus-col.vercel.app/", "_blank");
+                break;
+            case "Ferremacro Col":
+                window.open("https://ferre-col.vercel.app/", "_blank");
+                break;
+            default:
+                alert("Este espacio está reservado para tu próximo proyecto. ¡Pronto estará disponible!");
+        }
+    });
+});
+
+
+
+
+
 
 // Add ripple effect to buttons
 function createRipple(event) {
@@ -353,6 +371,8 @@ window.addEventListener("load", () => {
         })
     }, 500)
 })
+
+
 
 console.log("🚀 DevStudio Website Loaded Successfully!")
 console.log("💚 Desarrollado con amor y mucho código verde")
