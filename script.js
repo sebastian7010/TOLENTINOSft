@@ -284,6 +284,9 @@ document.querySelectorAll(".project-card").forEach((card) => {
             case "Ferremacro Col":
                 window.open("https://ferre-col.vercel.app/", "_blank");
                 break;
+            case "panambarberMAN":
+                window.open("https://barberia-sable.vercel.app/", "_blank");
+                break;
             default:
                 alert("Este espacio está reservado para tu próximo proyecto. ¡Pronto estará disponible!");
         }
